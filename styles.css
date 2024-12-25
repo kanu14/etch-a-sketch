@@ -1,0 +1,12 @@
+/* div {
+    border: 3px solid black;
+} */
+#container {
+    display: flex;
+}
+
+span div {
+    border: 3px solid black;
+    width: 30px;
+    height: 30px;
+}
