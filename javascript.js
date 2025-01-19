@@ -15,6 +15,7 @@ function createGrid() {
         for (let k = 0; k < grid_size; k++) {
             const gridDiv = document.createElement('div');
             gridDiv.id = `row ${i + 1} col ${k + 1}`;
+            gridDiv.className = "colored";
             // gridDiv.textContent = `row ${i + 1} col ${k + 1}`;
             
             span.appendChild(gridDiv);
@@ -24,3 +25,10 @@ function createGrid() {
 }
 
 createGrid();
+
+const gridDivs = document.querySelectorAll('.colored')
+gridDivs.forEach(div => {
+    div.addEventListener('mouseover', function(){
+        this.style.backgroundColor = 'blue';
+    });
+});
