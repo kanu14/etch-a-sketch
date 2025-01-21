@@ -2,11 +2,12 @@
 // add 16 x 16 grid of divs by js
 // 16 spans with 16 divs
 
-let grid_size = 16;
+let grid = 16;
+let grid_size = grid;
 
 const container = document.getElementById('container');
 
-function createGrid() {
+function createGrid(grid_size) {
     for (let i = 0; i < grid_size; i++) {
         const span = document.createElement('span');
         span.id = `row ${i + 1}`;
@@ -22,13 +23,24 @@ function createGrid() {
             
         }
     }
-}
 
-createGrid();
-
-const gridDivs = document.querySelectorAll('.colored')
-gridDivs.forEach(div => {
+    const gridDivs = document.querySelectorAll('.colored')
+    gridDivs.forEach(div => {
     div.addEventListener('mouseover', function(){
         this.style.backgroundColor = 'blue';
     });
+});
+}
+
+createGrid(grid_size);
+
+
+
+const button = document.querySelector('button');
+button.addEventListener('click', function() {
+    // clear table by removing new divs
+    container.replaceChildren();
+    // get user input for new table
+    let new_grid = parseInt(prompt("Enter a number for the new grid size"));
+    createGrid(new_grid);
 });

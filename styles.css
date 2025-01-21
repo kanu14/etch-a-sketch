@@ -17,3 +17,14 @@ span div {
     height: 30px;
 }
 
+#full-site {
+    display: flex;   
+    flex-direction: column; 
+    width:fit-content;
+    align-items: center;
+    
+}
+
+button {
+    margin: 20px 0 20px 0;
+}
